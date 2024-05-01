@@ -2,7 +2,7 @@ from langchain import PromptTemplate
 from langchain_community.llms import LlamaCpp
 from langchain.chains import RetrievalQA
 from langchain_community.embeddings import SentenceTransformerEmbeddings
-from fastapi import FastAPI, Request, Form, Response
+from fastapi import FastAPI, Request, Form, File, UploadFile
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles

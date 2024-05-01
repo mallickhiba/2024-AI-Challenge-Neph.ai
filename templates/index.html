@@ -75,8 +75,8 @@
         <h1 class="chat-heading">Welcome to Neph.ai!</h1>
 
         <div class="about-text">
-            <h3></h3>
-            <p>This is a RAG implementation using Open Source stack. BioMistral 7B has been used to build this app along with PubMedBert as an embedding model, Qdrant as a self hosted Vector DB, and Langchain & Llama CPP as orchestration frameworks.</p>
+            <h3>Neph.ai is a tool for all your dialysis related questions, queries and concerns.</h3>
+            <p>This is a RAG implementation using BioMistral 7B with PubMedBert as an embedding model, Langchain and Llama CPP, hosted using Qdrant. It references relevant chapters of Textbook of Medical Physiology by Guyton and Hall and Dialysis Without Fear by Danial Offer et. al. </p>
         </div>
 
         <div class="row">
@@ -84,6 +84,10 @@
                 <textarea id="userInput" class="form-control chat-input" placeholder="Type your query here..."></textarea>
                 <button id="submitBtn" class="btn chat-button">Ask Neph.ai</button> <!-- Changed button text -->
                 <div id="response" class="chat-response"></div>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" id="fileUpload" name="fileUpload" accept=".pdf">
+                    <button id="uploadBtn" class="btn chat-button">Upload PDF</button>
+                </form>
             </div>
         </div>
     </div>
@@ -113,6 +117,25 @@
             }
         });
 
+        document.getElementById('uploadBtn').addEventListener('click', async function() {
+            var fileInput = document.getElementById('fileUpload');
+            var file = fileInput.files[0];
+            var formData = new FormData();
+            formData.append('file', file);
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
     </script>
 </body>
 </html>
