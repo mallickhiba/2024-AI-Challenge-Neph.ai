@@ -20,7 +20,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 local_llm = "BioMistral-7B.Q4_K_M.gguf"
 
-# Make sure the model path is correct for your system!
 llm = LlamaCpp(
     model_path= local_llm,
     temperature=0.2,
@@ -28,7 +27,7 @@ llm = LlamaCpp(
     top_p=1
 )
 
-print("LLM Initialized....")
+print("Neph.ai running")
 
 prompt_template = """Use the following pieces of information to answer the user's question.
 If you don't know the answer, just say that you don't know, don't try to make up an answer.

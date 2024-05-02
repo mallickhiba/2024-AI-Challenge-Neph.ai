@@ -24,4 +24,4 @@ qdrant = Qdrant.from_documents(
     prefer_grpc=False,
     collection_name="vector_db"
 )
-print("Vector DB created!")
+print("vector db running")

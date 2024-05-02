@@ -33,7 +33,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
             height: 100px;
-            background-color: white; /* Changed text box color to dark */
+            background-color: white;
             color: white;
             border: none;
             padding: 10px;
@@ -42,11 +42,11 @@
         .chat-button {
             background-color: #B4C292;
             color: rgb(0, 0, 0);
-            padding: 10px 40px; /* Adjusted padding to center the button */
+            padding: 10px 40px; 
             font-size: 1.2em;
             display: block;
-            margin: 0 auto; /* Centering the button */
-            margin-top: 10px; /* Added margin */
+            margin: 0 auto; 
+            margin-top: 10px; 
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -82,7 +82,7 @@
         <div class="row">
             <div class="col">
                 <textarea id="userInput" class="form-control chat-input" placeholder="Type your query here..."></textarea>
-                <button id="submitBtn" class="btn chat-button">Ask Neph.ai</button> <!-- Changed button text -->
+                <button id="submitBtn" class="btn chat-button">Ask Neph.ai</button>
                 <div id="response" class="chat-response"></div>
                 <form id="uploadForm" enctype="multipart/form-data">
                     <input type="file" id="fileUpload" name="fileUpload" accept=".pdf">
@@ -106,7 +106,7 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Network response error');
                 }
 
                 const data = await response.json();
@@ -128,7 +128,7 @@
                     body: formData
                 });
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Network response error');
                 }
                 const data = await response.json();
                 console.log(data);

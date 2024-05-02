@@ -5,4 +5,8 @@ Embedding Model: PubMedBert
 LangChain. Llama CPP
 Vector Database: Qdrant
 
-
+How to run:
+1. Have Docker service running
+2. In command line, run 'python ingest.py' (allow for libraries to download from requirements.txt)
+3. In another terminal run "uvicorn app:app"
+4. Access app on localhost:8000 
