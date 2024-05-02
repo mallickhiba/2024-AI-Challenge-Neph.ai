@@ -6,7 +6,6 @@ LangChain. Llama CPP
 Vector Database: Qdrant
 
 How to run:
-1. Have Docker service running
-2. In command line, run 'python ingest.py' (allow for libraries to download from requirements.txt)
-3. In another terminal run "uvicorn app:app"
-4. Access app on localhost:8000 
+1. With Docker service running, run 'python ingest.py'
+2. Allow for libraries to download from requirements.txt, then in another terminal, run "uvicorn app:app"
+3. Access app on localhost:8000 
